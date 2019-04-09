@@ -1,0 +1,15 @@
+{
+  "user": {
+    "username": "test",
+    "email": "test@example.com",
+    "token": "token",
+    "bio": "a test bio",
+    "image": "test.jpg"
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "/api/user"
+    }
+  ]
+}

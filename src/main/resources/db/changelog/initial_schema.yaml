@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: jmoore
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigserial
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(16)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: password_hash
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bio
+                  type: text
+              - column:
+                  name: image
+                  type: text
+        - createTable:
+            tableName: user_follow
+            columns:
+              - column:
+                  name: follower_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: followed_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+        - addPrimaryKey:
+            tableName: user_follow
+            columnNames: follower_id, followed_id
+
+
+
+

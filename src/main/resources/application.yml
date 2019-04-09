@@ -1,0 +1,9 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+
+application:
+  security:
+    authentication:
+      jwt:
+        base64-secret: D3MFTpMXrx0ttT2ZlusoYPieEzzWGOMJvCcZDm4CW1NMFSbIwGQxev+s3ZTirohorEra0mLfaKLKQZr1QkhY5Q==

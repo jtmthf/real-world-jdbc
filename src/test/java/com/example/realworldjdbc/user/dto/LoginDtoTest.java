@@ -1,0 +1,23 @@
+package com.example.realworldjdbc.user.dto;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.json.JsonTest;
+import org.springframework.boot.test.json.JacksonTester;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import static org.assertj.core.api.Java6Assertions.assertThat;
+
+@RunWith(SpringRunner.class)
+@JsonTest
+public class LoginDtoTest {
+
+    @Autowired
+    private JacksonTester<LoginDto> json;
+
+    @Test
+    public void testDeserialize() throws Exception {
+        assertThat(this.json.read("login-dto.json")).isEqualTo(new LoginDto("test@example.com", "password"));
+    }
+}
